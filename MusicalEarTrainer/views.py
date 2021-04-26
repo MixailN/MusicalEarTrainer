@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from catalog.models import Exercise
 
 def home(request):
-    return render(request, 'home.html')
+    exercises = Exercise.objects
+    return render(request, 'home.html', {'exercises': exercises})
