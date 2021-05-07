@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'catalog/styles.css' %}">
+
 <head>
     <meta charset="UTF-8">
     <title>MusicalEarTrainer</title>
@@ -11,5 +15,6 @@
     <p>{{ exercise.exercise_description }}</p>
     <a href="/catalog/{{ exercise.id }}">click</a>
 {% endfor %}
+
 </body>
 </html>
