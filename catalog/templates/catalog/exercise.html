@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicalEarTrainer</title>
+</head>
+<body>
+    <h2>{{ exercise.exercise_title }}</h2>
+    <p>{{ exercise.exercise_description }}</p>
+     {% for task in exercise.tasks.all %}
+         <a href="{{ task.id }}">Task {{ forloop.counter }}</a>
+     {% endfor %}
+</body>
+</html>
