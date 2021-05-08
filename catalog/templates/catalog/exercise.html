@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'exercise/styles.css' %}">
 <head>
     <meta charset="UTF-8">
     <title>MusicalEarTrainer</title>
@@ -7,8 +9,7 @@
 <body>
     <h2>{{ exercise.exercise_title }}</h2>
     <p>{{ exercise.exercise_description }}</p>
-     {% for task in exercise.tasks.all %}
-         <a href="{{ task.id }}">Task {{ forloop.counter }}</a>
-     {% endfor %}
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src={% static "exercise/main.js" %}></script>
 </html>
