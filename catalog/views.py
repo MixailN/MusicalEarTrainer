@@ -16,11 +16,13 @@ def get_exercise(request, offset):
     try:
         offset = int(offset)
         exercise = Exercise.objects.get(id=offset)
+        tasks = list(exercise.tasks.all())
+        tasks = [tmp.id for tmp in tasks]
     except ValueError:
         raise Http404()
     except Exercise.DoesNotExist:
         raise Http404()
-    return render(request, 'catalog/exercise.html', {'exercise': exercise})
+    return render(request, 'catalog/exercise.html', {'exercise': exercise, 'tasks': tasks})
 
 
 def get_task(request):
@@ -37,4 +39,3 @@ def get_task(request):
         return render(request, 'catalog/task.html', {'task': task, 'form': form})
     if request.method == 'POST':
         pass
-

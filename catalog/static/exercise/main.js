@@ -1,4 +1,9 @@
 $(document).ready(() => {
+    let test = $("#tasks")[0];
+    console.log(test);
+    console.log(test.textContent);
+    let array = $.parseJSON($.trim(test.textContent));
+    console.log(array);
     let url = $(location).attr('href') + '?task=4'
     var data = '';
 $(".test").click(() => {
