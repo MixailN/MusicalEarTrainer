@@ -1,10 +1,14 @@
-
-<audio controls preload="auto">
-    <source src="{{ task.task_sound.url }}" type="audio/ogg"/>
-</audio>
-{{ task.answer }}
-<form>
-    {{ form }}
-</form>
+<div id="task">
+    <audio controls preload="auto">
+        <source src="{{ task.task_sound.url }}" type="audio/ogg"/>
+    </audio>
+    {{ task.answer }}
+    <form id="form">
+        {{ form }}
+    </form>
+    <button type="submit" id="answer-btn">
+        Submit
+    </button>
+</div>
 
 

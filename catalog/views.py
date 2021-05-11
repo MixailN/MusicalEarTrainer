@@ -33,7 +33,7 @@ def get_task(request):
             raise Http404()
         except Exercise.DoesNotExist:
             raise Http404()
-        except Exception:
+        except Exception as e:
             raise Http404()
         form = create_form(task.task_type, task.answer)
         return render(request, 'catalog/task.html', {'task': task, 'form': form})
