@@ -3,6 +3,7 @@ from django.http import Http404
 from .models import Exercise
 from .models import Task
 from .possible_answers import create_form
+import json
 from django.http import JsonResponse
 
 # Create your views here.
@@ -41,8 +42,9 @@ def get_task(request):
         return render(request, 'catalog/task.html', {'task': task, 'form': form})
     if request.method == 'POST':
         try:
-            task = Task.objects.get(id=int(request.GET['q']))
-            answer = request.GET['ans']
+            body = json.loads(request.body)
+            task = Task.objects.get(id=int(body['q']))
+            answer = body['ans']
         except Exception:
             raise Http404()
         response_data = {
