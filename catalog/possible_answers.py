@@ -14,11 +14,9 @@ def create_form(task_type, correct_answer):
     possible_answers.remove(correct_answer)
     for i in range(ANSWERS_QUANTITY - 1):
         index = random.randint(0, len(possible_answers) - 1)
-        result_answers.append([i, possible_answers[index]])
+        result_answers.append([possible_answers[index], possible_answers[index]])
         possible_answers.pop(index)
     index = random.randint(0, len(result_answers) - 1)
-    result_answers.insert(index, [index, correct_answer])
-    for i in range(index + 1, ANSWERS_QUANTITY):
-        result_answers[i][0] += 1
+    result_answers.insert(index, [correct_answer, correct_answer])
     form = AnswerForm(result_answers)
     return form
