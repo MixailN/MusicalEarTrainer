@@ -3,6 +3,8 @@ from django.http import Http404
 from .models import Exercise
 from .models import Task
 from .possible_answers import create_form
+from django.http import JsonResponse
+
 # Create your views here.
 EXERCISE_TYPES = []
 
@@ -33,9 +35,18 @@ def get_task(request):
             raise Http404()
         except Exercise.DoesNotExist:
             raise Http404()
-        except Exception as e:
+        except Exception:
             raise Http404()
         form = create_form(task.task_type, task.answer)
         return render(request, 'catalog/task.html', {'task': task, 'form': form})
     if request.method == 'POST':
-        pass
+        try:
+            task = Task.objects.get(id=int(request.POST['q']))
+            answer = request.POST['ans']
+        except Exception:
+            raise Http404()
+        response_data = {
+            'is_right': task.answer == answer,
+            'answer': task.answer
+        }
+        return JsonResponse(response_data)

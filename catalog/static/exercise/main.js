@@ -24,25 +24,24 @@ $(document).ready(() => {
 })
 
 async function insert_task() {
-    let task = $("#task")[0]
+    let task = $("#task")[0];
     if (task !== undefined) {
         task.remove()
     }
-    let elem = $("#title")
-    task = await get_task()
-    elem.after(task)
-    let btn = $("#answer-btn")[0]
-    btn.setAttribute("form", "form")
+    let elem = $("#title");
+    task = await get_task();
+    elem.after(task);
+    let btn = $("#answer-btn")[0];
+    btn.setAttribute("form", "form");
     $("#form")[0].addEventListener("submit", function (event) {
-        insert_task()
-        event.preventDefault()
+        insert_task();
+        event.preventDefault();
     })
 }
 
 
-
 function get_task() {
-    let url = url_template + tasks_id[point]
+    let url = url_template + tasks_id[point];
     return fetch(url).then(response => {
         point++;
         return response.text()

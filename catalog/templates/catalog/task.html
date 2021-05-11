@@ -4,6 +4,7 @@
     </audio>
     {{ task.answer }}
     <form id="form">
+        {% csrf_token %}
         {{ form }}
     </form>
     <button type="submit" id="answer-btn">
