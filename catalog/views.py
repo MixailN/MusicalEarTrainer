@@ -41,8 +41,8 @@ def get_task(request):
         return render(request, 'catalog/task.html', {'task': task, 'form': form})
     if request.method == 'POST':
         try:
-            task = Task.objects.get(id=int(request.POST['q']))
-            answer = request.POST['ans']
+            task = Task.objects.get(id=int(request.GET['q']))
+            answer = request.GET['ans']
         except Exception:
             raise Http404()
         response_data = {
