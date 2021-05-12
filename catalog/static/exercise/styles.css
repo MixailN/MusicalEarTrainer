@@ -43,11 +43,14 @@ body {
     font-size: 1em;
 }
 
-#next {
+#next, #finish {
     margin-left: 30px;
     font-size: 1em;
 }
 
+ audio {
+     display: none;
+ }
 
 @media screen and (orientation: portrait) {
     body {

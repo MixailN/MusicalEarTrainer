@@ -8,19 +8,6 @@ $(document).ready(() => {
     console.log(tasks_id);
     insert_task();
 
-    // var data = '';
-    // $(".test").click(() => {
-    //     $.get(url, function (tmp) {
-    //         data = tmp;
-    // });
-    // fetch(url + '?task=4').then(
-    //     response => { return response.text() }
-    // ).then(
-    //     resText => {
-    //         console.log(resText);
-    //         $(document).write
-    //     }
-    // )
 });
 
 async function insert_task() {
@@ -31,6 +18,11 @@ async function insert_task() {
     let elem = $("#title");
     task = await get_task();
     elem.after(task);
+    let audio = $("#sound")[0];
+    $("#play-btn")[0].addEventListener("click", function (event) {
+        event.preventDefault();
+        audio.play();
+    });
     // let btn = $("#answer-btn")[0]
     // btn.setAttribute("form", "form")
     $("#form")[0].addEventListener("submit", async function (event) {
@@ -79,9 +71,13 @@ function get_task() {
 function check(ans) {
     const csrftoken = Cookies.get('csrftoken');
     let url = url_template + tasks_id[point] + "&ans=" + ans;
-    let data = { q: tasks_id[point], ans: ans};
+    let data = {q: tasks_id[point], ans: ans};
     url = encodeURI(url);
-    return fetch(url, {method: 'POST', headers: {'X-CSRFToken': csrftoken}, body: JSON.stringify(data)}).then(response => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {'X-CSRFToken': csrftoken},
+        body: JSON.stringify(data)
+    }).then(response => {
         return response.json()
     })
 }
