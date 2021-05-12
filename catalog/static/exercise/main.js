@@ -34,15 +34,38 @@ async function insert_task() {
     // let btn = $("#answer-btn")[0]
     // btn.setAttribute("form", "form")
     $("#form")[0].addEventListener("submit", async function (event) {
+        $("#answer-btn")[0].setAttribute("disabled", true);
         event.preventDefault();
-        let ans = $('input[name=answer_list]:checked').val();
+        let ans = $('input[name=answer_list]:checked');
         console.log(ans);
-        let json = await check(ans);
+        let json = await check(ans.val());
         console.log(json)
+        let val = json.answer
+        ans.parent().css("background", "red")
+        $('[value=' + val + ']').parent().css("background", "green")
+        if (point === tasks_id.length - 1) {
+            insert_finish()
+            return
+        }
+        insert_next()
     })
 }
 
+function insert_next() {
+    $("#form").after($('<button id="next">next</button>'))
+    $("#next")[0].addEventListener("click", function (event) {
+        event.preventDefault()
+        insert_task()
+    })
+}
 
+function insert_finish() {
+    $("#form").after($('<button id="finish">finish</button>'))
+    $("#finish")[0].addEventListener("click", function (event) {
+        event.preventDefault()
+        window.location.href = "http://127.0.0.1:8000/catalog/";
+    })
+}
 
 function get_task() {
     point++;
