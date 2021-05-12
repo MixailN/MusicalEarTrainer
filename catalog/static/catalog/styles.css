@@ -99,3 +99,62 @@
 .key:hover {
   background: lawngreen;
 }
+
+/* Выравнивание контента */
+body{
+  width: 50%;
+  margin-left: 25%;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+  background-color: #aeff8e;
+  border-radius: 17px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+.exercise {
+  background-color: #aeff8e;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+
+}
+
+.exercise p {
+  margin-left: 15px;
+}
+
+.exercise a {
+  font-size: 1.5em;
+  display: block;
+  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+  border-style: inset;
+  border-width: medium;
+  border-radius: 7px;
+ /* color: rgb(29, 107, 4);*/
+ /* width: 30%;*/
+}
+
+.exercise a:visited {
+  color: #157203;
+}
+
+@media screen and (orientation: portrait) {
+    body {
+        width: 94%;
+        margin-left: 3%;
+    }
+
+
+}

@@ -1,8 +1,10 @@
 <div id="task">
-    <audio controls preload="auto">
-        <source src="{{ task.task_sound.url }}" type="audio/ogg"/>
-    </audio>
-    {{ task.answer }}
+    <div class="audio">
+        <audio controls preload="auto">
+            <source src="{{ task.task_sound.url }}" type="audio/ogg"/>
+        </audio>
+    </div>
+
     <form id="form">
         {% csrf_token %}
         {{ form }}

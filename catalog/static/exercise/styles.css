@@ -1,0 +1,54 @@
+body {
+    font-size: 20px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#title {
+    background-color: #aeff8e;
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+#title h2 {
+    text-align: center;
+}
+
+#title p {
+    margin-left: 15px;
+    font-size: 1.1em;
+}
+
+#task {
+    background-color: #aeff8e;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.audio {
+    display: block;
+    text-align: center;
+}
+
+#form {
+    margin-left: 30px;
+}
+
+#answer-btn {
+    font-size: 1em;
+}
+
+@media screen and (orientation: portrait) {
+    body {
+        font-size: 30px;
+        width: 94%;
+        margin-left: 3%;
+    }
+
+    
+}

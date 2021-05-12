@@ -11,9 +11,11 @@
 <body>
 <h1>Catalog</h1>
 {% for exercise in exercises.all %}
-    <h2>{{ exercise.exercise_title }}</h2>
-    <p>{{ exercise.exercise_description }}</p>
-    <a href="/catalog/{{ exercise.id }}">click</a>
+    <div class="exercise">
+        <h2>{{ exercise.exercise_title }}</h2>
+        <p>{{ exercise.exercise_description }}</p>
+        <a href="/catalog/{{ exercise.id }}">Click</a>
+    </div>
 {% endfor %}
 </body>
 </html>
