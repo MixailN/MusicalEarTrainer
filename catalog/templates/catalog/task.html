@@ -1,6 +1,7 @@
 <div id="task">
     <div class="audio">
-        <audio controls preload="auto">
+        <button id="play-btn">Play</button>
+        <audio id="sound" controls preload="auto">
             <source src="{{ task.task_sound.url }}" type="audio/ogg"/>
         </audio>
     </div>

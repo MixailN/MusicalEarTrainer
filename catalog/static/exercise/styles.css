@@ -48,6 +48,9 @@ body {
     font-size: 1em;
 }
 
+ audio {
+     display: none;
+ }
 
 @media screen and (orientation: portrait) {
     body {
