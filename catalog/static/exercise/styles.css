@@ -87,6 +87,10 @@ audio {
     display: none;
 }
 
+#id_answer_list {
+    padding: 0;
+}
+
 @media screen and (orientation: portrait) {
     body {
         font-size: 30px;
