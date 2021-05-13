@@ -16,8 +16,6 @@ body {
     font-size: 20px;
 }
 
-
-
 #task {
     width: 40%;
     display: flex;
@@ -42,7 +40,6 @@ svg {
     height: 60px;
 }
 
-
 label {
     border-radius: 10px;
 }
@@ -55,7 +52,7 @@ label {
     width: 70%;
 }
 
-#answer-btn, #next, #finish{
+#answer-btn, #next, #finish {
     font-family: "Montserrat Regular", sans-serif;
     align-self: center;
     background-color: royalblue;
@@ -72,7 +69,7 @@ label {
     margin-right: 10px;
 }
 
-#answer-btn:hover, #next:hover, #finish:hover{
+#answer-btn:hover, #next:hover, #finish:hover {
     background-color: dodgerblue;
     cursor: pointer;
     color: black;
@@ -82,9 +79,13 @@ label {
     display: flex;
 }
 
- audio {
-     display: none;
- }
+li {
+    list-style-type: none;
+}
+
+audio {
+    display: none;
+}
 
 @media screen and (orientation: portrait) {
     body {
@@ -92,5 +93,5 @@ label {
         width: 94%;
         margin-left: 3%;
     }
-    
+
 }
