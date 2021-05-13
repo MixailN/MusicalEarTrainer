@@ -1,17 +1,24 @@
 <div id="task">
+    <form id="form">
+        {{ form }}
+        <div id="buttons-container">
+            <button type="submit" id="answer-btn">
+                Check
+            </button>
+        </div>
+    </form>
     <div class="audio">
-        <button id="play-btn">Play</button>
+        <button id="play-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                      d="M16.75 10.83L4.55 19A1 1 0 0 1 3 18.13V1.87A1 1 0 0 1 4.55 1l12.2 8.13a1 1 0 0 1 0 1.7z">
+                </path>
+            </svg>
+        </button>
         <audio id="sound" controls preload="auto">
             <source src="{{ task.task_sound.url }}" type="audio/ogg"/>
         </audio>
     </div>
-
-    <form id="form">
-        {{ form }}
-        <button type="submit" id="answer-btn">
-            Check
-        </button>
-    </form>
 </div>
 
 

@@ -44,7 +44,7 @@ async function insert_task() {
 }
 
 function insert_next() {
-    $("#form").after($('<button id="next">next</button>'))
+    $("#buttons-container").append($('<button id="next">Next</button>'))
     $("#next")[0].addEventListener("click", function (event) {
         event.preventDefault()
         insert_task()
@@ -52,7 +52,7 @@ function insert_next() {
 }
 
 function insert_finish() {
-    $("#form").after($('<button id="finish">finish</button>'))
+    $("#buttons-container").append($('<button id="finish">Finish</button>'))
     $("#finish")[0].addEventListener("click", function (event) {
         event.preventDefault()
         window.location.href = "http://127.0.0.1:8000/catalog/";

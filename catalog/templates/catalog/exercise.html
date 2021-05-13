@@ -8,8 +8,7 @@
 </head>
 <body>
 <div id="title">
-    <h2>{{ exercise.exercise_title }}</h2>
-    <p>{{ exercise.exercise_description }}</p>
+    <h1>{{ exercise.exercise_title }}</h1>
 </div>
 {{ tasks|json_script:"tasks" }}
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
